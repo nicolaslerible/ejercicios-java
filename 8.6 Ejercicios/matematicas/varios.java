@@ -19,8 +19,7 @@ public class varios{
     }while(n != 0);
     return s;
   }
-  
-  public static int Digitos(int n){
+  public static int Digitos(long n){
     int i = 1;
     int d = 0;
     do{
@@ -34,7 +33,11 @@ public class varios{
     for(int i=0;i<e;i++){
       p = p*n;
     }
-    return p;
+    if(p != 0){
+      return p;
+    }else{
+      return 1;
+    }
   }
   public static boolean Capicua(int n){
     int vol = Voltear(n);
@@ -60,14 +63,12 @@ public class varios{
       return -1;
     }
   }
-  
   public static int DigitoN(int n, int p){
     int pot = Potencia(10, p-1);
     int c = n/pot;
     c = c%10;
     return c;
   }
-  
   public static boolean EsPrimo(int n){
     int con = 0;
     for(int i=1;i<n;i++){
@@ -82,7 +83,6 @@ public class varios{
       return false;
     }
   }
-  
   public static int SiguientePrimo(int n){
     int d=0;
     do{
@@ -93,24 +93,20 @@ public class varios{
     }while(d<1);
     return n;
   }
-  
   public static int QuitaPorDetras(int n, int d){
     d=Potencia(10, d);
     n=n/d;
     return n;
   }
-  
   public static int QuitaPorDelante(int n, int d){
     d=Potencia(10, Digitos(n)-d);
     n=n%d;
     return n;
   }
-  
   public static int PegaPorDetras(int n, int d){
     n=(n*10)+d;
     return n;
   }
-  
   public static int PegaPorDelante(int n, int d){
     n=(n*10)+d;
     return n;
@@ -121,9 +117,24 @@ public class varios{
     n = (n/i)%(f/i);
     return n;
   }
-  
   public static int JuntaNumeros(int n, int m){
     n = n*Potencia(10, Digitos(m))+m;
     return n;
   }
+  public static long BinADec (long n){
+    int i = 0;
+    long c = 0;
+    long s = 0;
+    do{
+      c = n;
+      long o = c%10;
+      if(c==1){
+        s = s+Potencia(2, i);
+      }
+      c = c/10;
+      i++;
+    }while(i<Digitos(n));
+    return s;
+  }
+  
 }
