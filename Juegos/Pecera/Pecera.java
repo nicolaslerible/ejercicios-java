@@ -8,7 +8,7 @@ public class Pecera {
     while(0==0){
       dori.nadar();
       System.out.println("////////");
-      Thread.sleep(20);
+      Thread.sleep(1500);
       
     }
 	}
