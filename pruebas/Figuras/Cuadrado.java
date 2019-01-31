@@ -3,16 +3,15 @@ public class Cuadrado extends Figuras {
 	
   //ATRIBUTOS
   int lado=0;
-  
   //CONSTRUCTOR
-  public Cuadrado(int l){
-    super((l*l), (l*4));
+  public Cuadrado(int l, String nom){
+    super((l*l), (l*4), nom);
     this.lado = l;
   }
   
   //TOSTRING
   public String toString(){
-    return "area= "+this.getArea()+"   perimetro= "+this.getPerimetro();
+    return this.getNombre()+"   area= "+this.getArea()+"   perimetro= "+this.getPerimetro();
   }
 }
 
